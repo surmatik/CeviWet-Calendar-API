@@ -1,10 +1,8 @@
 version: '3.8'
 
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  calendar-api:
+    image: ghcr.io/surmatik/ceviwet-calendar-api:latest
     ports:
       - "5000:5000"
     volumes:
