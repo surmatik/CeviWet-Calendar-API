@@ -1,0 +1,16 @@
+name: Docker-Image CI für GHCR
+
+on:
+  push:
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Bild erstellen
+        run: docker build . --tag ghcr.io/surmatik/smartplug-steuerung:latest
+      - name: Bei GHCR anmelden und veröffentlichen
+        run: |
+          echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u surmatik --password-stdin
+          docker push ghcr.io/surmatik/smartplug-steuerung:latest
