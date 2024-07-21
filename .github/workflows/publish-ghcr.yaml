@@ -13,4 +13,4 @@ jobs:
       - name: Bei GHCR anmelden und veröffentlichen
         run: |
           echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u surmatik --password-stdin
-          docker push ghcr.io/surmatik/smartplug-steuerung:latest
+          docker push ghcr.io/surmatik/ceviwet-calendar-api:latest
