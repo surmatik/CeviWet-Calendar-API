@@ -50,7 +50,7 @@ def get_next_event_with_keyword(service, calendar_id, keyword):
             }
     return None
 
-@app.route('/next_nachmittagsprogramm', methods=['GET'])
+@app.route('/api/v1/next_nachmittagsprogramm', methods=['GET'])
 def next_nachmittagsprogramm():
     calendar_type = request.args.get('calendar_type')
     
